@@ -8,10 +8,10 @@
     <title>RSA Encryption</title>
     <meta name="description" content="RSA encryption, decryption, and key generation.">
     <link rel="stylesheet" href="styles.css">
-    <!-- <link rel="icon" href="physics.ico" />  -->
 </head>
 
 <body>
+    <!--Generate Keys-->
     <div class="big-container">
         <div class="container">
             <div class="form">
@@ -25,9 +25,39 @@
                 </div>
             </div>
         </div>
-        
+
+        <!--Encrypt-->
+        <div class="big-container">
+            <div class="container">
+                <div class="form">
+                    <h1>Encrypt RSA</h1>
+                    <div class="button-container">
+                        <button id="generateRSAKeys" onclick="generateRSAKeys()">Generate Keys</button>
+                    </div>
+                    <div class="output">
+                        <label for="output">Output:</label>
+                        <textarea id="output" name="output"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!--Decrypt-->
+            <div class="big-container">
+                <div class="container">
+                    <div class="form">
+                        <h1>Decrypt RSA</h1>
+                        <div class="button-container">
+                            <button id="generateRSAKeys" onclick="generateRSAKeys()">Generate Keys</button>
+                        </div>
+                        <div class="output">
+                            <label for="output">Output:</label>
+                            <textarea id="output" name="output"></textarea>
+                        </div>
+                    </div>
+                </div>
+
 </body>
 
-<script src="script.js"></script> 
+<script src="script.js"></script>
 
 </html>
