@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0; /* Instead of * { margin: 0; } */
+  margin: 0;
 }
 
 div {
@@ -41,8 +41,8 @@ div {
   margin-bottom: 20px;
 }
 
-.header-text {
-  font-size: 20px; /* Adjusted font size */
+.header .header-text {
+  font-size: 20px;
 }
 
 .content {
@@ -56,7 +56,6 @@ div {
   margin-right: 10px;
 }
 
-/* Simplified button styling */
 button {
   background-color: #007bff;
   color: white;
@@ -89,18 +88,18 @@ button:hover {
 
 .button-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
   margin-top: 20px;
 }
 
 .button-container button {
   display: block;
-  margin: 10px auto;
+  margin: 10px;
 }
 
-/* Generalized input styling */
 input {
   padding: 10px;
 }
