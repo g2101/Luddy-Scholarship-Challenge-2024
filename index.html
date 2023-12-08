@@ -13,104 +13,56 @@
 
 <body>
     <div class="big-container">
-        <!-- Magnitude and Direction Calculator -->
         <div class="container">
-            <div class="form">
-                <div class="checkbox-list">
-                    <h1>Caesar Cipher</h1>
-                    <br>
-                    <label for="caesarInput">Enter the word to encode:</label>
-                    <br>
-                    <input id="caesarInput" type="text">
-                    <br><br>
-                    <label for="shiftAmount">How many letters do you want to shift by?</label>
-                    <br>
-                    <input id="shiftAmount" type="text">
-                    <br><br>
-                </div>
-                <div class="button-container">
-                    <button id="encryptCaesar" onclick="caesarCipher()" aria-label="Caesar Cipher">Calculate</button>
-                </div>
-                <div class="output">
-                    <label for="caesarOutput">Output:</label>
-                    <textarea id="caesarOutput" name="caesarOutput"></textarea>
+            <div class="container">
+                <div class="form">
+                    <div class="checkbox-list">
+                        <h1>Caesar Cipher: Encrypt</h1>
+                        <br>
+                        <label for="caesarEncryptInput">Enter the word to encode:</label>
+                        <br>
+                        <input id="caesarEncryptInput" type="text">
+                        <br><br>
+                        <label for="shiftEncryptAmount">How many letters do you want to shift by?</label>
+                        <br>
+                        <input id="shiftEncryptAmount" type="number">
+                        <br><br>
+                    </div>
+                    <div class="button-container">
+                        <button id="encryptCaesar" onclick="caesarCipherEncrypt()"
+                            aria-label="Caesar Cipher">Encrypt</button>
+                    </div>
+                    <div class="output">
+                        <label for="caesarEncryptOutput">Output:</label>
+                        <textarea id="caesarEncryptOutput" name="caesarEncryptOutput"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="container">
+                <div class="form">
+                    <div class="checkbox-list">
+                        <h1>Caesar Cipher: Decrypt</h1>
+                        <br>
+                        <label for="caesarDecryptInput">Enter the word to decode:</label>
+                        <br>
+                        <input id="caesarDecryptInput" type="text">
+                        <br><br>
+                        <label for="shiftDecryptAmount">How many letters was it shifted by?</label>
+                        <br>
+                        <input id="shiftDecryptAmount" type="number">
+                        <br><br>
+                    </div>
+                    <div class="button-container">
+                        <button id="decryptCaesar" onclick="caesarCipherDecrypt()"
+                            aria-label="Caesar Cipher">Decrypt</button>
+                    </div>
+                    <div class="output">
+                        <label for="caesarDecryptOutput">Output:</label>
+                        <textarea id="caesarDecryptOutput" name="caesarDecryptOutput"></textarea>
+                    </div>
+                </div>
 
-        <!-- Reference Angle Calculator -->
-        <div class="container">
-            <div class="form">
-                <div class="checkbox-list">
-                    <h1>Reference Angle Calculator</h1>
-                    <br>
-                    <label for="xDisplacement">Enter the X displacement</label>
-                    <input id="xDisplacement" type="text">
-                    <br><br>
-                    <label for="yDisplacement">Enter the Y displacement</label>
-                    <input id="yDisplacement" type="text">
-                </div>
-                <div class="button-container">
-                    <button id="calculateATan" onclick="calculateATan()" aria-label="Calculate Theta">Calculate Theta</button>
-                </div>
-                <div class="output">
-                    <label for="tanOutput">Output:</label>
-                    <textarea id="tanOutput"></textarea>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pythagorean Calculator -->
-        <div class="container">
-            <div class="form">
-                <div class="checkbox-list">
-                    <h1>Pythagorean Calculator</h1>
-                    <br>
-                    <label for="aValue">Enter the A value</label>
-                    <input id="aValue" type="text">
-                    <br><br>
-                    <label for="bValue">Enter the B value</label>
-                    <input id="bValue" type="text">
-                </div>
-                <div class="button-container">
-                    <button id="pythagCalc" type="button" onclick="calculatePythagorean()" aria-label="Calculate C">Calculate C</button>
-                </div>
-                <div class="output">
-                    <label for="pythagoreanOutput">Output:</label>
-                    <textarea id="pythagoreanOutput" name="pythagoreanOutput"></textarea>
-                </div>
-            </div>
-        </div>
-
-        <!-- Friction Calculator -->
-        <div class="container">
-            <div class="form">
-                <div class="checkbox-list">
-                    <h1>Friction Calculator</h1>
-                    <br>
-                    <label for="kilograms1">Enter the weight in kilograms</label>
-                    <input id="kilograms1" type="text">
-                    <br><br>
-                    <label for="newtons1">Enter the force with which it is being pushed in Newtons</label>
-                    <input id="newtons1" type="text">
-                    <br><br>
-                    <label for="static1">Enter the coefficient of static force</label>
-                    <input id="static1" type="text">
-                    <br><br>
-                    <label for="kinetic1">Enter the coefficient of kinetic force</label>
-                    <input id="kinetic1" type="text">
-                </div>
-                <div class="button-container">
-                    <button id="calculateFriction" onclick="calculateFriction()" aria-label="Calculate Friction">Calculate</button>
-                </div>
-                <div class="output">
-                    <label for="friction1Output">Output:</label>
-                    <textarea id="friction1Output"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="calculator.js"></script>
+                <script src="script.js"></script>
 </body>
 
 </html>
