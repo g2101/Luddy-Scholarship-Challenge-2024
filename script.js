@@ -7,7 +7,7 @@ function caesarCipher(input, shiftAmount) {
     var ascii = input.charCodeAt(i);
 
     // if shiftAmount of over 26 is entered, take modulo down to manageable number
-    shiftAmount %= 26; 
+    shiftAmount %= 26;
 
     if (ascii >= 65 && ascii <= 90) {
       // for all uppercase letters (ASCII 65-90)
@@ -40,62 +40,57 @@ function decryptCaesar() { // function to return decrypted string to output
 
 // Vigenere Cipher Code
 function vigenereCipher(input, cipher, choice) {
-	// remove spaces from front and end of input and cipher
-	input = input.trim();
-	cipher = cipher.trim();
+  input = input.trim();
+  cipher = cipher.trim();
 
-	// make the cipher match the length of the input by looping the cipher text over
-	if (!(cipher.length == input.length)) {
-		for (let index = 0; cipher.length < input.length; index++) {
-				cipher += cipher.substring(index, index + 1); 
-		}
-		console.log("Input: " + input + " Length: " + input.length)
-		console.log("Constructed Cipher: " + cipher + " Length: " + cipher.length)
-	}
+  if (!(cipher.length == input.length)) {
+    for (let index = 0; cipher.length < input.length; index++) {
+      cipher += cipher.substring(index, index + 1);
+    }
+    console.log("Input: " + input + " Length: " + input.length);
+    console.log("Constructed Cipher: " + cipher + " Length: " + cipher.length);
+  }
 
-	// encrypt the text using the vigenere cipher 
-	output = ""
+  let output = "";
 
-	for (var index = 0; index < input.length; index++) { // iterate through entire word
-    var letter = input[index];
-    var asciiInput = input.charCodeAt(index);
-    var asciiCipher = cipher.charCodeAt(index);
-
+  for (let index = 0; index < input.length; index++) {
+    let letter = input[index];
+    let asciiInput = input.charCodeAt(index);
+    let asciiCipher = cipher.charCodeAt(index);
+    console.log("Letter: " + letter + " asciiInput: " + asciiInput + " asciiCipher: " + asciiCipher); // debugging
 
     if (choice === "encrypt") {
       if (asciiInput >= 65 && asciiInput <= 90) {
-        // for all uppercase letters (ASCII 65-90)
-        letter = String.fromCharCode(((ascii - 65 + asciiCipher + 26) % 26) + 65);
+        // Uppercase letters
+        letter = String.fromCharCode((((asciiInput - 65) + (asciiCipher - 65)) % 26) + 65);
       } else if (asciiInput >= 97 && asciiInput <= 122) {
-        // for all lowercase letters (ASCII 97-122)
-        letter = String.fromCharCode(((asciiInput - 97 + asciiCipher + 26) % 26) + 97);
+        // Lowercase letters
+        letter = String.fromCharCode((((asciiInput - 97) + (asciiCipher - 97)) % 26) + 97);
       }
     }
     if (choice === "decrypt") {
       if (asciiInput >= 65 && asciiInput <= 90) {
-        // for all uppercase letters (ASCII 65-90)
-        letter = String.fromCharCode(((asciiInput - 65 - asciiCipher + 26) % 26) + 65);
+        // Uppercase letters
+        letter = String.fromCharCode((((asciiInput - 65) - (asciiCipher - 65) + 26) % 26) + 65);
       } else if (asciiInput >= 97 && asciiInput <= 122) {
-        // for all lowercase letters (ASCII 97-122)
-        letter = String.fromCharCode(((asciiInput - 97 - asciiCipher + 26) % 26) + 97);
+        // Lowercase letters
+        letter = String.fromCharCode((((asciiInput - 97) - (asciiCipher - 97) + 26) % 26) + 97);
       }
     }
     output += letter;
-	}
-	return output;
+  }
+  return output;
 }
-
 function encryptVigenere() {
-	const input = document.getElementById("vigenereEncryptInput").value.toString();
-	const cipher = document.getElementById("vigenereKeywordEncrypt").value.toString();
-	const output = document.getElementById("vigenereEncryptOutput");
-	output.value = "The encoded string using the Vigenere cipher is:\n" + vigenereCipher(input, cipher, "encrypt");
-
+  const input = document.getElementById("vigenereEncryptInput").value.toString();
+  const cipher = document.getElementById("vigenereKeywordEncrypt").value.toString();
+  const output = document.getElementById("vigenereEncryptOutput");
+  output.value = "The encoded string using the Vigenere cipher is:\n" + vigenereCipher(input, cipher, "encrypt");
 }
 
 function decryptVigenere() {
   const input = document.getElementById("vigenereDecryptInput").value.toString();
-	const cipher = document.getElementById("vigenereKeywordDecrypt").value.toString();
-	const output = document.getElementById("vigenereDecryptOutput");
-	output.value = "The encoded string using the Vigenere cipher is:\n" + vigenereCipher(input, cipher, "decrypt");
+  const cipher = document.getElementById("vigenereKeywordDecrypt").value.toString();
+  const output = document.getElementById("vigenereDecryptOutput");
+  output.value = "The decoded string using the Vigenere cipher is:\n" + vigenereCipher(input, cipher, "decrypt");
 }
