@@ -23,7 +23,6 @@ div {
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
-  width: 50%;
 }
 
 .container {
@@ -48,11 +47,13 @@ div {
 
 .content {
   display: flex;
+  justify-content: space-between;
   padding: 20px;
 }
 
 .form {
   flex: 1;
+  margin-right: 10px;
 }
 
 button {
@@ -103,3 +104,6 @@ input {
   padding: 10px;
 }
 
+.external-link {
+  text-decoration: none;
+}

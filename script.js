@@ -54,9 +54,19 @@ function vigenereCipher(input, cipher) {
 	}
 
 	// encrypt the text using the vigenere cipher 
+
+	output = ""
+
 	for (let index = 0; index < input.length; index++) {
-		let x = (str[index].charCodeAt(0) + key[index].charCodeAt(0)) % 26; // needs to be adjusted
+		let x = (input[index].charCodeAt(0) + cipher[index].charCodeAt(0)) % 26;
+		console.log("Indexes at " + index + ((input[index].charCodeAt(0) + cipher[index].charCodeAt(0)) % 26)) // needs to be adjusted
+
+		x += 'A'.charCodeAt(0); // ????
+  
+    output += String.fromCharCode(x);
+
 	}
+	console.log("Output: " + output);
 
 }
 
