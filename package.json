@@ -1,0 +1,29 @@
+{
+  "name": "luddy-challenge-2024",
+  "version": "1.0.0",
+  "description": "multiple ciphers to be submitted for the 2024 scholarship challenge",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g2101/Luddy-Challenge-2024.git"
+  },
+  "keywords": [
+    "cipher"
+  ],
+  "author": "Garrett Park",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g2101/Luddy-Challenge-2024/issues"
+  },
+  "homepage": "https://github.com/g2101/Luddy-Challenge-2024#readme",
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}
