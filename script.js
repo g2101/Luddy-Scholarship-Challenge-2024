@@ -51,6 +51,7 @@ function vigenereCipher(input, cipher, choice) {
     }
   }
 
+  // extends the cipher to match the length of the input string by looping it
   if (!(cipher.length === input.length)) {
     for (let index = 0; cipher.length < input.length; index++) {
       cipher += cipher.substring(index, index + 1)
