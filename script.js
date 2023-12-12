@@ -1,5 +1,3 @@
-/* eslint-disable space-before-function-paren */
-/* eslint-disable no-unused-vars */
 // Caesar Cipher Code
 function caesarCipher(input, shiftAmount) {
   let outputString = ''
