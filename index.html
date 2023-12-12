@@ -34,22 +34,20 @@
         </div>
         <div class="container">
             <div class="form">
-                <div>
-                    <h1>Caesar Cipher: Decrypt</h1>
-                    <br>
-                    <label for="caesarDecryptInput">Enter the word to decode:</label>
-                    <br>
-                    <input id="caesarDecryptInput" type="text" placeholder="Wtaad!">
-                    <br><br>
-                    <label for="shiftDecryptAmount">How many letters was it shifted by?</label>
-                    <br>
-                    <input id="shiftDecryptAmount" type="number" placeholder="15">
-                    <br><br>
-                    <button id="decryptCaesar" onclick="decryptCaesar()" aria-label="Caesar Cipher">Decrypt</button>
-                    <br><br>
-                    <label for="caesarDecryptOutput">Output:</label>
-                    <textarea readonly id="caesarDecryptOutput" name="caesarDecryptOutput"></textarea>
-                </div>
+                <h1>Caesar Cipher: Decrypt</h1>
+                <br>
+                <label for="caesarDecryptInput">Enter the word to decode:</label>
+                <br>
+                <input id="caesarDecryptInput" type="text" placeholder="Wtaad!">
+                <br><br>
+                <label for="shiftDecryptAmount">How many letters was it shifted by?</label>
+                <br>
+                <input id="shiftDecryptAmount" type="number" placeholder="15">
+                <br><br>
+                <button id="decryptCaesar" onclick="decryptCaesar()" aria-label="Caesar Cipher">Decrypt</button>
+                <br><br>
+                <label for="caesarDecryptOutput">Output:</label>
+                <textarea readonly id="caesarDecryptOutput" name="caesarDecryptOutput"></textarea>
             </div>
         </div>
         <!--Vigenere Cipher-->
@@ -66,32 +64,27 @@
                 <input id="vigenereKeywordEncrypt" type="text" placeholder="HELLO">
                 <br><br>
                 <button id="encryptVigenere" onclick="encryptVigenere()" aria-label="Vigenere Cipher">Encrypt</button>
-                <div class="output">
-                    <label for="vigenereEncryptOutput">Output:</label>
-                    <textarea readonly id="vigenereEncryptOutput" name="vigenereEncryptOutput"></textarea>
-                </div>
+                <br><br>
+                <label for="vigenereEncryptOutput">Output:</label>
+                <textarea readonly id="vigenereEncryptOutput" name="vigenereEncryptOutput"></textarea>
             </div>
         </div>
         <div class="container">
             <div class="form">
-                <div>
-                    <h1>Vigenere Cipher: Decrypt</h1>
-                    <br>
-                    <label for="vigenereDecryptInput">Enter the encoded word to decode:</label>
-                    <br>
-                    <input id="vigenereDecryptInput" type="text" placeholder="Uiwwc!">
-                    <br><br>
-                    <label for="vigenereKeywordDecrypt">What cipher word was used to encode it?</label>
-                    <br>
-                    <input id="vigenereKeywordDecrypt" type="text" placeholder="HELLO">
-                    <br>
-                </div>
+                <h1>Vigenere Cipher: Decrypt</h1>
+                <br>
+                <label for="vigenereDecryptInput">Enter the encoded word to decode:</label>
+                <br>
+                <input id="vigenereDecryptInput" type="text" placeholder="Uiwwc!">
+                <br><br>
+                <label for="vigenereKeywordDecrypt">What cipher word was used to encode it?</label>
+                <br>
+                <input id="vigenereKeywordDecrypt" type="text" placeholder="HELLO">
+                <br>
                 <button id="decryptVigenere" onclick="decryptVigenere()" aria-label="Vigenere Cipher">Decrypt</button>
                 <br><br>
-
                 <label for="vigenereDecryptOutput">Output:</label>
                 <textarea readonly id="vigenereDecryptOutput" name="vigenereDecryptOutput"></textarea>
-
             </div>
         </div>
     </div>
