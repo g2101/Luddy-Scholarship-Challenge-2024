@@ -69,7 +69,6 @@ function vigenereCipher(input, cipher, choice) {
     let letter = input[index]
     const asciiInput = input.charCodeAt(index)
     const asciiCipher = cipher.charCodeAt(index)
-    console.log('Letter: ' + letter + ' asciiInput: ' + asciiInput + ' asciiCipher: ' + asciiCipher) // debugging
 
     if (choice === 'encrypt') {
       if (asciiInput >= 65 && asciiInput <= 90) {
