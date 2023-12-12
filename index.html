@@ -15,96 +15,87 @@
     <div class="big-container">
         <!--Caesar Cipher-->
         <div class="container">
-            <div class="container">
-                <div class="form">
-                    <h1>Caesar Cipher: Encrypt</h1>
-                    <br>
-                    <label for="caesarEncryptInput">Enter the word to encode:</label>
-                    <br><br>
-                    <input id="caesarEncryptInput" type="text" placeholder="Hello!">
-                    <br><br>
-                    <label for="shiftEncryptAmount">How many letters do you want to shift by?</label>
-                    <br><br>
-                    <input id="shiftEncryptAmount" type="number" placeholder="15">
-                    <br><br>
-                    <button id="encryptCaesar" onclick="encryptCaesar()" aria-label="Caesar Cipher">Encrypt</button>
-                    <div class="output">
-                        <label for="caesarEncryptOutput">Output:</label>
-                        <textarea id="caesarEncryptOutput" name="caesarEncryptOutput"></textarea>
-                    </div>
-                </div>
+            <div class="form">
+                <h1>Caesar Cipher: Encrypt</h1>
+                <br>
+                <label for="caesarEncryptInput">Enter the word to encode:</label>
+                <br>
+                <input id="caesarEncryptInput" type="text" placeholder="Hello!">
+                <br><br>
+                <label for="shiftEncryptAmount">How many letters do you want to shift by?</label>
+                <br>
+                <input id="shiftEncryptAmount" type="number" placeholder="15">
+                <br><br>
+                <button id="encryptCaesar" onclick="encryptCaesar()" aria-label="Caesar Cipher">Encrypt</button>
+                <br><br>
+                <label for="caesarEncryptOutput">Output:</label>
+                <textarea readonly id="caesarEncryptOutput" name="caesarEncryptOutput"></textarea>
             </div>
-            <div class="container">
-                <div class="form">
-                    <div>
-                        <h1>Caesar Cipher: Decrypt</h1>
-                        <br>
-                        <label for="caesarDecryptInput">Enter the word to decode:</label>
-                        <br>
-                        <input id="caesarDecryptInput" type="text" placeholder="Wtaad!">
-                        <br><br>
-                        <label for="shiftDecryptAmount">How many letters was it shifted by?</label>
-                        <br>
-                        <input id="shiftDecryptAmount" type="number" placeholder="15">
-                        <br>
-                    </div>
-                    <div class="button-container">
-                        <button id="decryptCaesar" onclick="decryptCaesar()" aria-label="Caesar Cipher">Decrypt</button>
-                    </div>
-                    <div class="output">
-                        <label for="caesarDecryptOutput">Output:</label>
-                        <textarea id="caesarDecryptOutput" name="caesarDecryptOutput"></textarea>
-                    </div>
+        </div>
+        <div class="container">
+            <div class="form">
+                <div>
+                    <h1>Caesar Cipher: Decrypt</h1>
+                    <br>
+                    <label for="caesarDecryptInput">Enter the word to decode:</label>
+                    <br>
+                    <input id="caesarDecryptInput" type="text" placeholder="Wtaad!">
+                    <br><br>
+                    <label for="shiftDecryptAmount">How many letters was it shifted by?</label>
+                    <br>
+                    <input id="shiftDecryptAmount" type="number" placeholder="15">
+                    <br><br>
+                    <button id="decryptCaesar" onclick="decryptCaesar()" aria-label="Caesar Cipher">Decrypt</button>
+                    <br><br>
+                    <label for="caesarDecryptOutput">Output:</label>
+                    <textarea readonly id="caesarDecryptOutput" name="caesarDecryptOutput"></textarea>
                 </div>
             </div>
         </div>
         <!--Vigenere Cipher-->
         <div class="container">
-            <div class="container">
-                <div class="form">
-                    <h1>Vigenere Cipher: Encrypt</h1>
-                    <br>
-                    <label for="vigenereEncryptInput">Enter the word to encode:</label>
-                    <br><br>
-                    <input id="vigenereEncryptInput" type="text" placeholder="Hello!">
-                    <br><br>
-                    <label for="vigenereKeywordEncrypt">What keyword do you want to encode the text with?</label>
-                    <br><br>
-                    <input id="vigenereKeywordEncrypt" type="text" placeholder="HELLO">
-                    <br><br>
-                    <button id="encryptVigenere" onclick="encryptVigenere()" aria-label="Vigenere Cipher">Encrypt</button>
-                    <div class="output">
-                        <label for="vigenereEncryptOutput">Output:</label>
-                        <textarea id="vigenereEncryptOutput" name="vigenereEncryptOutput"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="form">
-                    <div>
-                        <h1>Vigenere Cipher: Decrypt</h1>
-                        <br>
-                        <label for="vigenereDecryptInput">Enter the word to decode:</label>
-                        <br>
-                        <input id="vigenereDecryptInput" type="text" placeholder="Wtaad!">
-                        <br><br>
-                        <label for="vigenereKeywordDecrypt">What keyword was used?</label>
-                        <br>
-                        <input id="vigenereKeywordDecrypt" type="text" placeholder="15">
-                        <br>
-                    </div>
-                    <div class="button-container">
-                        <button id="decryptVigenere" onclick="decryptVigenere()" aria-label="Vigenere Cipher">Decrypt</button>
-                    </div>
-                    <div class="output">
-                        <label for="vigenereDecryptOutput">Output:</label>
-                        <textarea id="vigenereDecryptOutput" name="vigenereDecryptOutput"></textarea>
-                    </div>
+            <div class="form">
+                <h1>Vigenere Cipher: Encrypt</h1>
+                <br>
+                <label for="vigenereEncryptInput">Enter the word to encode:</label>
+                <br>
+                <input id="vigenereEncryptInput" type="text" placeholder="Hello!">
+                <br><br>
+                <label for="vigenereKeywordEncrypt">What cipher word do you want to encode the text with?</label>
+                <br>
+                <input id="vigenereKeywordEncrypt" type="text" placeholder="HELLO">
+                <br><br>
+                <button id="encryptVigenere" onclick="encryptVigenere()" aria-label="Vigenere Cipher">Encrypt</button>
+                <div class="output">
+                    <label for="vigenereEncryptOutput">Output:</label>
+                    <textarea readonly id="vigenereEncryptOutput" name="vigenereEncryptOutput"></textarea>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="form">
+                <div>
+                    <h1>Vigenere Cipher: Decrypt</h1>
+                    <br>
+                    <label for="vigenereDecryptInput">Enter the encoded word to decode:</label>
+                    <br>
+                    <input id="vigenereDecryptInput" type="text" placeholder="Uiwwc!">
+                    <br><br>
+                    <label for="vigenereKeywordDecrypt">What cipher word was used to encode it?</label>
+                    <br>
+                    <input id="vigenereKeywordDecrypt" type="text" placeholder="HELLO">
+                    <br>
+                </div>
+                <button id="decryptVigenere" onclick="decryptVigenere()" aria-label="Vigenere Cipher">Decrypt</button>
+                <br><br>
 
-        <script src="script.js"></script>
+                <label for="vigenereDecryptOutput">Output:</label>
+                <textarea readonly id="vigenereDecryptOutput" name="vigenereDecryptOutput"></textarea>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

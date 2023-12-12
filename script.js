@@ -43,21 +43,24 @@ function decryptCaesar() { // function to return decrypted string to output
 // Vigenere Cipher Code
 function vigenereCipher(input, cipher, choice) {
   input = input.trim()
-  cipher = cipher.trim()
+  cipher = cipher.trim().toLowerCase()
 
   for (let index = 0; index < cipher.length; index++) {
     if (cipher.charAt(index).match(/[^A-Za-z]/g)) {
-      return 'INVALID CIPHER INPUT.'
+      return 'INVALID CIPHER INPUT.\nEnter only letters with no spaces, numbers, or symbols.'
     }
   }
 
+  let extendedCipher = '' // create a new cipher from zero in the event that the cipher is longer than the input
+
   // extends the cipher to match the length of the input string by looping it
   if (!(cipher.length === input.length)) {
-    for (let index = 0; cipher.length < input.length; index++) {
-      cipher += cipher.substring(index, index + 1)
+    for (let index = 0; extendedCipher.length < input.length; index++) {
+      extendedCipher += cipher[index % cipher.length]
     }
+    cipher = extendedCipher // reassign cipher with the extended cipher
     console.log('Input: ' + input + ' Length: ' + input.length)
-    console.log('Constructed Cipher: ' + cipher + ' Length: ' + cipher.length)
+    console.log('Constructed Cipher: ' + extendedCipher + ' Length: ' + extendedCipher.length)
   }
 
   let output = ''
@@ -71,21 +74,23 @@ function vigenereCipher(input, cipher, choice) {
     if (choice === 'encrypt') {
       if (asciiInput >= 65 && asciiInput <= 90) {
         // Uppercase letters
-        letter = String.fromCharCode((((asciiInput - 65) + (asciiCipher - 65)) % 26) + 65)
+        letter = String.fromCharCode(((asciiInput - 65 + asciiCipher - 65) % 26 + 26) % 26 + 65)
       } else if (asciiInput >= 97 && asciiInput <= 122) {
         // Lowercase letters
-        letter = String.fromCharCode((((asciiInput - 97) + (asciiCipher - 97)) % 26) + 97)
+        letter = String.fromCharCode(((asciiInput - 97 + asciiCipher - 97) % 26 + 26) % 26 + 97)
       }
     }
+
     if (choice === 'decrypt') {
       if (asciiInput >= 65 && asciiInput <= 90) {
         // Uppercase letters
-        letter = String.fromCharCode((((asciiInput - 65) - (asciiCipher - 65) + 26) % 26) + 65)
+        letter = String.fromCharCode(((asciiInput - 65 - (asciiCipher - 65) + 26) % 26 + 26) % 26 + 65)
       } else if (asciiInput >= 97 && asciiInput <= 122) {
         // Lowercase letters
-        letter = String.fromCharCode((((asciiInput - 97) - (asciiCipher - 97) + 26) % 26) + 97)
+        letter = String.fromCharCode(((asciiInput - 97 - (asciiCipher - 97) + 26) % 26 + 26) % 26 + 97)
       }
     }
+
     output += letter
   }
   return output
@@ -104,3 +109,5 @@ function decryptVigenere() {
   const output = document.getElementById('vigenereDecryptOutput')
   output.value = 'The decoded string using the Vigenere cipher is:\n' + vigenereCipher(input, cipher, 'decrypt')
 }
+
+// add RSA SoonTM??
