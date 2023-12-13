@@ -1,15 +1,15 @@
 // Caesar Cipher Code
-function caesarCipher(input, shiftAmount) {
+function caesarCipher (input, shiftAmount) {
   // error handling before rest of function runs
   if (input === '' && isNaN(shiftAmount)) {
-    alert("No input provided in both inputs.");
-    return "No input provided in both inputs.";
+    alert('No input provided in both inputs.')
+    return 'No input provided in both inputs.'
   } else if (input === '') {
-    alert("No input provided in the input for the word.");
-    return "No input provided in the input for the word.";
+    alert('No input provided in the input for the word.')
+    return 'No input provided in the input for the word.'
   } else if (isNaN(shiftAmount)) {
-    alert("No input provided in the shift amount.");
-    return "No input provided in the shift amount.";
+    alert('No input provided in the shift amount.')
+    return 'No input provided in the shift amount.'
   }
 
   let outputString = '' // create blank output string
@@ -40,14 +40,14 @@ function caesarCipher(input, shiftAmount) {
 }
 
 // functions called in the HTML on each button press
-function encryptCaesar() { // returns the encrypted Caesar cipher to the encryption section output
+function encryptCaesar () { // returns the encrypted Caesar cipher to the encryption section output
   const input = document.getElementById('caesarEncryptInput').value.trim()
   const shiftAmount = parseInt(document.getElementById('shiftEncryptAmount').value)
   const output = document.getElementById('caesarEncryptOutput')
   output.value = 'The encoded string using the Caesar cipher is:\n' + caesarCipher(input, shiftAmount) // use a positive shift amount to encrypt cipher text
 }
 
-function decryptCaesar() { // returns the decrypted Caesar cipher to the decryption section output
+function decryptCaesar () { // returns the decrypted Caesar cipher to the decryption section output
   const input = document.getElementById('caesarDecryptInput').value
   const shiftAmount = parseInt(document.getElementById('shiftDecryptAmount').value)
   const output = document.getElementById('caesarDecryptOutput')
@@ -55,17 +55,17 @@ function decryptCaesar() { // returns the decrypted Caesar cipher to the decrypt
 }
 
 // Vigenere Cipher Code
-function vigenereCipher(input, cipher, choice) {
+function vigenereCipher (input, cipher, choice) {
   // error handling before rest of function runs
   if (input === '' && cipher === '') {
-    alert("No input provided in both inputs.");
-    return "No input provided in both inputs.";
+    alert('No input provided in both inputs.')
+    return 'No input provided in both inputs.'
   } else if (input === '') {
-    alert("No input provided in the word input.");
-    return "No input provided in the word input.";
+    alert('No input provided in the word input.')
+    return 'No input provided in the word input.'
   } else if (cipher === '') {
-    alert("No input provided in the cipher input.");
-    return "No input provided in the cipher input.";
+    alert('No input provided in the cipher input.')
+    return 'No input provided in the cipher input.'
   }
 
   let outputString = ''
@@ -110,7 +110,6 @@ function vigenereCipher(input, cipher, choice) {
         // for all non-letters (ASCII 33-64)
         letter = String.fromCharCode((((asciiInput - 33) - (asciiCipher - 33) + 32) % 32 + 32) % 32 + 33)
       }
-
     }
     // append ciphered characters to the end of the string
     outputString += letter
@@ -119,14 +118,14 @@ function vigenereCipher(input, cipher, choice) {
 }
 
 // functions called in the HTML on each button press
-function encryptVigenere() {
+function encryptVigenere () {
   const input = document.getElementById('vigenereEncryptInput').value.toString().trim()
   const cipher = document.getElementById('vigenereKeywordEncrypt').value.toString().trim()
   const output = document.getElementById('vigenereEncryptOutput')
   output.value = 'The encoded string using the Vigenere cipher is:\n' + vigenereCipher(input, cipher, 'encrypt')
 }
 
-function decryptVigenere() {
+function decryptVigenere () {
   const input = document.getElementById('vigenereDecryptInput').value.toString().trim()
   const cipher = document.getElementById('vigenereKeywordDecrypt').value.toString().trim()
   const output = document.getElementById('vigenereDecryptOutput')
