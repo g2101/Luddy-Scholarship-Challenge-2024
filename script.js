@@ -1,5 +1,17 @@
 // Caesar Cipher Code
 function caesarCipher(input, shiftAmount) {
+  // error handling before rest of function runs
+  if (input === '' && isNaN(shiftAmount)) {
+    alert("No input provided in both inputs.");
+    return "No input provided in both inputs.";
+  } else if (input === '') {
+    alert("No input provided in the input for the word.");
+    return "No input provided in the input for the word.";
+  } else if (isNaN(shiftAmount)) {
+    alert("No input provided in the shift amount.");
+    return "No input provided in the shift amount.";
+  }
+
   let outputString = '' // create blank output string
 
   // iterate through entire word
@@ -44,11 +56,23 @@ function decryptCaesar() { // returns the decrypted Caesar cipher to the decrypt
 
 // Vigenere Cipher Code
 function vigenereCipher(input, cipher, choice) {
+  // error handling before rest of function runs
+  if (input === '' && cipher === '') {
+    alert("No input provided in both inputs.");
+    return "No input provided in both inputs.";
+  } else if (input === '') {
+    alert("No input provided in the word input.");
+    return "No input provided in the word input.";
+  } else if (cipher === '') {
+    alert("No input provided in the cipher input.");
+    return "No input provided in the cipher input.";
+  }
+
   let outputString = ''
 
-  // creates an empty new cipher, then loops it around until it matches the length of the input
+  // creates new empty string to be used as the temporary cipher, looping the original cipher until it matches the length of the input
   if (!(cipher.length === input.length)) {
-    let extendedCipher = '' // creates new cipher to match the length of the input string
+    let extendedCipher = ''
     for (let index = 0; extendedCipher.length < input.length; index++) {
       extendedCipher += cipher[index % cipher.length]
     }
@@ -56,7 +80,6 @@ function vigenereCipher(input, cipher, choice) {
     console.log('Input: ' + input + ' Length: ' + input.length)
     console.log('Constructed Cipher: ' + extendedCipher + ' Length: ' + extendedCipher.length)
   }
-
 
   for (let index = 0; index < input.length; index++) {
     let letter = input[index]
@@ -89,7 +112,7 @@ function vigenereCipher(input, cipher, choice) {
       }
 
     }
-
+    // append ciphered characters to the end of the string
     outputString += letter
   }
   return outputString
