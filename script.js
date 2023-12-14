@@ -14,13 +14,13 @@ function caesarCipher(input, shiftAmount) {
 
   let outputString = '' // create blank output string
 
+  // if shiftAmount of over 26 is entered, take modulo down to manageable number
+  shiftAmount %= 26
+
   // iterate through entire word
   for (let i = 0; i < input.length; i++) {
     let letter = input[i]
     const ascii = input.charCodeAt(i)
-
-    // if shiftAmount of over 26 is entered, take modulo down to manageable number
-    shiftAmount %= 26
 
     if (ascii >= 65 && ascii <= 90) {
       // for all uppercase letters (ASCII 65-90)
