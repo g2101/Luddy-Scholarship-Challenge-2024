@@ -71,15 +71,15 @@ function vigenereCipher(input, cipher, choice) {
   let outputString = ''
 
   // creates new empty string to be used as the temporary cipher, looping the original cipher until it matches the length of the input
-  if (!(cipher.length === input.length)) {
+  if (!(cipher.length >= input.length)) {
     let extendedCipher = ''
     for (let index = 0; extendedCipher.length < input.length; index++) {
       extendedCipher += cipher[index % cipher.length]
     }
     cipher = extendedCipher // reassign original cipher with the extended cipher
-    console.log('Input: ' + input + ' Length: ' + input.length)
-    console.log('Constructed Cipher: ' + extendedCipher + ' Length: ' + extendedCipher.length)
   }
+  console.log('Input: ' + input + ' Length: ' + input.length)
+  console.log('Constructed Cipher: ' + cipher + ' Length: ' + cipher.length)
 
   for (let index = 0; index < input.length; index++) {
     let letter = input[index]
