@@ -3,13 +3,10 @@
 function caesarCipher (input, shiftAmount) {
   // error handling before rest of function runs
   if (input === '' && isNaN(shiftAmount)) {
-    alert('No input provided in both inputs.')
     return 'No input provided in both inputs.'
   } else if (input === '') {
-    alert('No input provided in the input for the word.')
     return 'No input provided in the input for the word.'
   } else if (isNaN(shiftAmount)) {
-    alert('No input provided in the shift amount.')
     return 'No input provided in the shift amount.'
   }
 
@@ -59,13 +56,10 @@ function decryptCaesar () { // returns the decrypted Caesar cipher to the decryp
 function vigenereCipher (input, cipher, choice) {
   // error handling before rest of function runs
   if (input === '' && cipher === '') {
-    alert('No input provided in both inputs.')
     return 'No input provided in both inputs.'
   } else if (input === '') {
-    alert('No input provided in the word input.')
     return 'No input provided in the word input.'
   } else if (cipher === '') {
-    alert('No input provided in the cipher input.')
     return 'No input provided in the cipher input.'
   }
 
